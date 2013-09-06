@@ -1,0 +1,9 @@
+langurage: ruby
+rvm: 2.0.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: W+cLrDStxYd4mSJJAmWD7n216Umd8mK4dI0x1KseMazeO8mqpVD7PWGZvmYLXwgjvQIUIuJPeXym4+RosWg1ECpCybpEQ5/HL73Lf1fU/qM+6pHDgQw7QZDVrYu5cynT4SxmYve4PUdJrSfTJ5QFlwgbQsFwp/khGg2VAwn5B+8=
+  app: lit-ocean-3112
+  on:
+    repo: u-akihiro/mini-project
