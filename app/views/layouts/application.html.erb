@@ -2,13 +2,23 @@
 <html>
 <head>
   <title>MiniProject</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "common.css", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "bootstrap/css/bootstrap.css" %>
+  <%= stylesheet_link_tag "bootstrap/font-awesome/css/font-awesome.css" %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="wrap">
+    <%= render :partial => 'blogs/_header' %><!-- /header -->
+    <div id="contents">
+      <%= yield %>
+    </div>
+      <%= render :partial => 'blogs/_footer' %><!-- /header -->
+</div>
 
-<%= yield %>
 
 </body>
 </html>

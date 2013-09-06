@@ -1,33 +1,58 @@
-<h1>Listing blogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Blog</th>
-      <th>Acccount</th>
-      <th>Blog title</th>
-      <th>Blog detail</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.blog_id %></td>
-        <td><%= blog.acccount_id %></td>
-        <td><%= blog.blog_title %></td>
-        <td><%= blog.blog_detail %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
+<div class="main">
+  <% @blogs.each do |blog| %>
+  <div id="blog_<%= blog.blog_id %>" class="blog">
+    <h2><%= blog.blog_detail %></h2>
+    <div class="blog-detail">
+     <%= nl2br(blog.blog_detail) %>
+    </div>
+    <ul class="blog-date">
+      <li style="text-align: right;">
+        <p><%= blog.create_at %></p>
+      </li>
+    </ul>
+    <div class="blog-edit">
+      <ul>
+        <li style="text-align:right;margin-top:5px;">
+          <%= link_to '編集',:class =>'btn btn-primary btn-small', blog.blog_id %>
+          <%= link_to '削除', blog.blog_id, method: :delete, :class => 'btn btn-danger btn-small', data: { confirm: 'Are you sure?' } %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <% end %>
+  <a href="#" id="page-top" style="margin-top:20px;">
+    <%= image_tag 'jump_logo.png', :class => 'roll' %>
+  </a>
+</div><!-- /main --><td></td>
+<div class="side-menu">
+  <div id="archive">
+    <ul>
+      <li class="title">
+        <i class="icon-tag icon-large"></i>
+        <span>Archive</span>
+      </li>
+      <% @blogs.each do |log| %>
+      <li>
+        <i class="icon-chevron-right"></i>
+        <a href="#"><%= link_to blog.blog_title , log %></a>
+      </li>
+      <% end %>
+    </ul>
+  </div><!-- /archive -->
+  <div id="manage-menu">
+    <ul>
+      <li class="title">
+        <i class="icon-edit icon-large"></i>
+        <span>Manager</span>
+      </li>
+      <li>
+        <i class="icon-edit"></i>
+        <a href="#">日記を作る</a>
+      </li>
+      <li>
+        <i class="icon-edit"></i>
+        <a href="#">総編集画面</a>
+      </li>
+    </ul>
+  </div><!-- /carender -->
+</div><!-- /side-mnenu -->
