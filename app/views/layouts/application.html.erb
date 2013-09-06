@@ -12,11 +12,20 @@
 </head>
 <body>
 <div id="wrap">
-    <%= render :partial => 'blogs/_header' %><!-- /header -->
+  <div id="header">
+    <div class="header-top" style="margin-bottom:3px;">
+      <p>お手軽なブログシステム</p>
+    </div>
+    <%= image_tag 'top.png' %>
+  </div>
     <div id="contents">
       <%= yield %>
     </div>
-      <%= render :partial => 'blogs/_footer' %><!-- /header -->
+      <div id="footer"oote>
+        <div class="fr-inner">
+          © 2013-2013 hogehogehogehogehogehogehogehogehogehoge
+        </div>
+      </div><!-- /footer -->
 </div>
 
 
