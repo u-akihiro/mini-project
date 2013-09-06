@@ -13,6 +13,7 @@ end
 group :test do
 	gem 'rake'
 	gem 'rspec-rails'
+	gem 'capybara'
 end
 
 group :production do
