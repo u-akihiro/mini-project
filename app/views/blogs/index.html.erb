@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>Blog</th>
-      <th>Acccount</th>
       <th>Blog title</th>
       <th>Blog detail</th>
       <th></th>
@@ -17,7 +16,6 @@
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= blog.blog_id %></td>
-        <td><%= blog.acccount_id %></td>
         <td><%= blog.blog_title %></td>
         <td><%= blog.blog_detail %></td>
         <td><%= link_to 'Show', blog %></td>
