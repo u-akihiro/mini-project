@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130906060252) do
+ActiveRecord::Schema.define(version: 20130906071435) do
 
-  create_table "accounts", force: true do |t|
-    t.integer  "acccount_id"
-    t.string   "account_name"
+  create_table "blogs", force: true do |t|
+    t.integer  "blog_id"
+    t.string   "blog_title"
+    t.text     "blog_detail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

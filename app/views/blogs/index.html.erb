@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="main">
   <% @blogs.each do |blog| %>
   <div id="blog_<%= blog.blog_id %>" class="blog">
@@ -56,3 +57,36 @@
     </ul>
   </div><!-- /carender -->
 </div><!-- /side-mnenu -->
+=======
+<h1>Listing blogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Blog</th>
+      <th>Blog title</th>
+      <th>Blog detail</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.blog_id %></td>
+        <td><%= blog.blog_title %></td>
+        <td><%= blog.blog_detail %></td>
+        <td><%= link_to 'Show', blog %></td>
+        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blog', new_blog_path %>
+>>>>>>> b64f2f8220e999e2ef81571371b3408034060b65
